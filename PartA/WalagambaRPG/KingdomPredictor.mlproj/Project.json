@@ -1,0 +1,29 @@
+{
+  "activityEntities" : [
+    "projectCreated",
+    [
+      {
+        "createdDate" : "2025-11-22T04:38:16Z",
+        "event" : "projectCreated",
+        "id" : "1223062F-D660-435D-8FA7-4A76F2E56B94",
+        "subtitle" : "KingdomPredictor",
+        "title" : "Project Created"
+      }
+    ]
+  ],
+  "authorName" : "Kisura W.S.P",
+  "createdDate" : "2025-11-22T04:38:16Z",
+  "description" : "",
+  "id" : "B194E277-CEDF-4316-A24D-AC1E4F4F7C8F",
+  "license" : "",
+  "location" : "",
+  "modifiedDate" : "2025-11-22T04:38:16Z",
+  "projectName" : "KingdomPredictor",
+  "settingsEntity" : {
+    "snapshotOnExtendTraining" : true,
+    "snapshotOnResumeTraining" : false
+  },
+  "taskType" : "generalRegresor",
+  "title" : "Tabular Regression",
+  "version" : "1.1"
+}

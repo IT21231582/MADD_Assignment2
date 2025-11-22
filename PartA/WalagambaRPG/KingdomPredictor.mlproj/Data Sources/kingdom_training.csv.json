@@ -1,0 +1,41 @@
+{
+  "activityEntities" : [
+    "dataSourceTrainingStarted",
+    [
+      {
+        "createdDate" : "2025-11-22T04:39:43Z",
+        "event" : "dataSourceTrainingStarted",
+        "id" : "6E0DD977-8CD2-4182-80EC-0B05DCBC275A",
+        "subtitle" : "KingdomPredictor 1",
+        "title" : "Used By"
+      }
+    ],
+    "dataSourceMetrics",
+    [
+      {
+        "createdDate" : "2025-11-22T04:39:43Z",
+        "event" : "dataSourceMetrics",
+        "id" : "7DEE91D7-586B-4DFD-B9AD-D55B54CAF6C6",
+        "subtitle" : "50 Items",
+        "title" : "Data Summary"
+      }
+    ]
+  ],
+  "createdDate" : "2025-11-22T04:39:14Z",
+  "dataPathRelativeToProjectURL" : "../../Projects/MADD/Januk%20Ponnaya/WalagambaRPG/WalagambaRPG/Models/kingdom_training.csv/",
+  "dataResult" : {
+    "createdDate" : "2025-11-22T04:39:14Z",
+    "dataSourceID" : "40180EF7-CD39-4FBD-9E4D-95051020B58E",
+    "dataURL" : "file:///Users/kisuraw.s.p/Documents/Projects/MADD/Januk%20Ponnaya/WalagambaRPG/WalagambaRPG/Models/kingdom_training.csv"
+  },
+  "dataURL" : "file:///Users/kisuraw.s.p/Documents/Projects/MADD/Januk%20Ponnaya/WalagambaRPG/WalagambaRPG/Models/kingdom_training.csv",
+  "experimentIDs" : [
+    "CA710BCA-C4D4-454F-993D-0DA190868EFD"
+  ],
+  "id" : "40180EF7-CD39-4FBD-9E4D-95051020B58E",
+  "modifiedDate" : "2025-11-22T04:39:43Z",
+  "pathType" : 0,
+  "preferredFilename" : "kingdom_training.csv",
+  "title" : "kingdom_training.csv",
+  "version" : "1.0"
+}
