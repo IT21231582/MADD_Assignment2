@@ -1,4 +1,4 @@
-urni47 – AR Furniture Preview App
+Furni47 – AR Furniture Preview App
 ARKit + SwiftUI + Core Data
 
 Furni47 is an iOS application that allows users to preview virtual furniture in real-world environments using augmented reality. The app uses ARKit for surface detection and object placement, SwiftUI for UI components and navigation, and Core Data to save user-selected furniture models.
