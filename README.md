@@ -1,156 +1,264 @@
-# MADD_Assignment2
-# TV Calculator (tvOS)
+TV Calculator & Unit Converter – Documentation
+1. Introduction
 
-TV Calculator is a simple, tvOS-based prototype application designed for use on Apple TV.  
-It provides a large-screen calculator and a bill-splitting tool that can be operated entirely via the Apple TV remote or keyboard arrow keys.
+This document presents the design, functionality, and technical implementation of the TV Calculator & Unit Converter, a prototype tvOS application developed using SwiftUI. The goal of the app is to reimagine simple everyday utilities—such as calculators and unit converters—for a living-room environment where users rely on a remote control instead of touch input.
 
-This project was developed as part of a Mobile Application Design and Development assignment, focusing on platform-specific design and interaction patterns for tvOS.
+The app was developed as part of the SE4041 – Mobile Application Design and Development assignment, focusing on platform-specific design for tvOS and demonstrating the ability to adapt interaction models to a television interface.
 
----
+2. Purpose of the Application
 
-## 🎯 Purpose & Goal
+Traditional calculators and converters are typically built for mobile devices. This project aims to shift those tools into a TV context, where the user interacts using:
 
-The goal of this app is to explore how everyday utilities like calculators can be reimagined for the living room context on Apple TV.
+Arrow keys
 
-Instead of being a single-user, phone-only tool, TV Calculator:
+Siri Remote (D-pad or clickpad)
 
-- Runs on the **big screen**
-- Supports **remote-based navigation**
-- Uses **focus-based UI** patterns built for tvOS
-- Demonstrates how a simple idea can be adapted to a different platform with different interaction models
+Large on-screen navigation focus
 
----
+Spacious UI designed for distance viewing
 
-## 📺 Key Features
+The app provides:
 
-### 1. Home Screen
-- Simple landing page with two large, easy-to-select options:
-  - **Calculator**
-  - **Bill Splitter**
-- Designed for readability from a distance.
+A standard calculator
 
-### 2. Calculator
-- Basic arithmetic:
-  - Addition
-  - Subtraction
-  - Multiplication
-  - Division
-- Large display area for the current expression / result.
-- Button grid laid out in a familiar calculator layout.
-- Fully operable via:
-  - Apple TV Remote D-pad / touch surface
-  - Keyboard arrow keys + Return/Enter
+A unit converter with common conversion categories
 
-### 3. Bill Splitter
-- Allows the user to:
-  - Enter a total bill amount
-  - Enter number of people
-  - Calculate the amount each person needs to pay
-- Handles invalid input safely and shows a simple validation message.
+A simple, clear, and accessible interface suitable for TV usage.
 
----
+3. Key Features
+3.1 Standard Calculator
 
-## 🧩 tvOS-Specific Design & Interaction
+The calculator offers basic arithmetic operations:
 
-This app has been structured specifically around **tvOS interaction patterns**:
+Addition
 
-- **Focus Engine**  
-  All interactive elements are made focusable, allowing navigation via arrow keys and the Apple TV remote.
+Subtraction
 
-- **Large, Spaced-Out UI**  
-  Buttons and text fields are sized and spaced for viewing on a TV from a distance.
+Multiplication
 
-- **High-Contrast, Simple Layout**  
-  The interface avoids clutter and uses clear visual grouping to keep the experience comfortable on a large screen.
+Division
 
-Even though the core logic is simple, the app demonstrates how to adapt UI/UX when the input method changes from touch to remote/keyboard.
+Decimal support
 
----
+Buttons are arranged in a large 4×4 grid with:
 
-## 🏗️ Architecture & Technologies
+Clear typography
 
-- **Platform**: tvOS  
-- **Language**: Swift  
-- **UI Framework**: SwiftUI  
-- **Navigation**: `NavigationStack`  
-- **Pattern**: Simple, screen-based SwiftUI views (can be extended into MVVM if needed)
+Custom blue highlight
 
-### Main Components
+Animated focus scaling
 
-- `TVCalculatorApp.swift`  
-  - Entry point of the app, sets up the `NavigationStack` and initial `HomeView`.
+Smooth tvOS navigation
 
-- `HomeView.swift`  
-  - Landing screen with navigation options to the Calculator and the Bill Splitter.
+3.2 Unit Converter
 
-- `CalculatorView.swift`  
-  - Implements the calculator interface and logic.
-  - Uses `NSExpression` to evaluate arithmetic expressions after mapping operators to standard symbols (`×` → `*`, `÷` → `/`, `−` → `-`).
+A fully button-driven unit converter, designed to require no keyboard input, offering:
 
-- `BillSplitterView.swift`  
-  - Handles the UI and logic for splitting a total bill between a number of people.
-  - Contains basic validation for empty / invalid inputs.
+Conversion Categories
 
-- `FocusableButtonStyle.swift`  
-  - A custom `ButtonStyle` used to make buttons feel consistent across the app and to support focusable behavior.
+Length
 
----
+Meters ↔ Kilometers
 
-## 🧪 Testing & Validation
+Weight
 
-The app was tested using the **Apple TV Simulator** in Xcode.
+Kilograms ↔ Grams
 
-### Manual Test Scenarios
+Temperature
 
-- **Calculator**
-  - Simple operations: `2 + 2`, `10 − 3`, `5 × 4`, `20 ÷ 5`
-  - Mixed operations in one expression: `2 + 3 × 4`
-  - Edge cases: pressing `=` multiple times, multiple operators, starting with `0`, use of decimal point.
+Celsius ↔ Fahrenheit
 
-- **Bill Splitter**
-  - Valid inputs: total = `100`, people = `4` → result `25.00`
-  - Invalid inputs:
-    - Total or people left empty
-    - People = 0
-    - Non-numeric values (handled by conversion checks)
+Conversion Flow
 
-- **Navigation**
-  - Arrow-key navigation between all calculator buttons.
-  - Transition between Home → Calculator → Back → Home.
-  - Transition between Home → Bill Splitter → Back → Home.
+User selects a category
 
----
+Selects a conversion type
 
-## ▶️ How to Run
+Enters a value using an on-screen numeric keypad
 
-1. Open the project in **Xcode**.
-2. Make sure **tvOS** is selected as the platform.
-3. Select a target like:
-   - `Apple TV` (1080p) Simulator  
-   - or `Apple TV 4K` Simulator
-4. Click **Run**.
+Presses Convert
 
-The app will launch into the Home screen on the tvOS simulator.
+The result appears instantly in large, readable text
 
----
+This section demonstrates clean state handling and modular UI design for tvOS.
 
-## 🚀 Possible Future Improvements
+3.3 Daily Inspiration (Optional)
 
-This prototype can be extended with:
+A dynamic section on the Home screen displaying:
 
-- History of calculations stored locally.
-- Multiple profiles (e.g., each family member saving presets).
-- Theming support (light/dark or color themes).
-- Voice input via Siri Remote for entering numbers or commands.
-- More advanced financial modes (tips, tax, budgeting presets).
+A random motivational quote or fun fact
 
----
+A random background image
 
-## 📚 Assignment Context
+Includes smooth focus animation and optional interaction.
 
-This project was built as a **tvOS prototype application** to demonstrate:
+4. User Experience & Interaction Design
+4.1 tvOS Navigation
 
-- Understanding of **platform-specific interaction** (focus-based navigation).
-- Ability to adapt a simple utility app to the **large-screen living room environment**.
-- Use of **SwiftUI** and **tvOS simulator** for rapid prototyping.
+The app relies heavily on the tvOS Focus Engine, enabling navigation using:
 
+Siri Remote
+
+Arrow keys
+
+Standard keyboard
+
+To support this:
+
+All interactive elements implement .focusable(true)
+
+A custom FocusableButtonStyle provides:
+
+Blue highlight
+
+Glow
+
+Scale effect
+
+Smooth transition animations
+
+The layout is spaced generously to prevent focus ambiguity.
+
+4.2 Visual Design
+
+The visual language emphasizes:
+
+A blue-white gradient background
+
+Large spacing between UI components
+
+Crisp, high-contrast text
+
+Minimum visual clutter
+
+Consistent rounded corners and transparencies
+
+This aligns with best practices for 10-foot UI experiences.
+
+5. Technical Implementation
+5.1 Technologies Used
+
+SwiftUI for tvOS
+
+NavigationStack for screen transitions
+
+State management using @State
+
+Custom ButtonStyle for focus animations
+
+Reusable numeric keypad component
+
+5.2 Architecture
+
+A lightweight modular architecture was used:
+
+TVCalculatorApp.swift
+Launches the app and sets the NavigationStack.
+
+HomeView.swift
+Displays the main navigation to the Calculator and Unit Converter.
+
+CalculatorView.swift
+Contains grid layout, arithmetic logic, and display output.
+
+UnitConverterView.swift
+Provides:
+
+Category picker
+
+Conversion selector
+
+Keypad input
+
+Conversion logic
+
+FocusableButtonStyle.swift
+Custom style for all tvOS buttons (highlight/glow/scale).
+
+This modular structure supports easy expansion and debugging.
+
+6. Testing
+6.1 Testing Environment
+
+Testing was performed on:
+
+Apple TV 1080p Simulator
+
+Apple TV 4K Simulator
+
+6.2 Manual Test Scenarios
+Calculator
+
+Basic operations
+
+Decimal input
+
+Large numbers
+
+Rapid button navigation
+
+Correct parsing and calculation using NSExpression
+
+Unit Converter
+
+All conversions tested with various values
+
+Conversion formulas validated:
+
+Meters ↔ Kilometers
+
+Grams ↔ Kilograms
+
+Celsius ↔ Fahrenheit
+
+Keypad input behavior tested
+
+Output accuracy confirmed
+
+Navigation
+
+Arrow key/D-pad movement
+
+Focus highlighting
+
+Returning between screens
+
+No loss of focus when navigating between keypad buttons
+
+7. Reflection
+
+This project reinforced understanding of tvOS-specific interaction design, particularly:
+
+How the Focus Engine changes UI layouts
+
+Importance of large typography and spacing
+
+Designing input flows without a system keyboard
+
+Using custom button styles to improve user experience
+
+The unit converter in particular showcased how a simple tool can be redesigned to work without text fields—purely through remote-friendly UI components.
+
+If extended, this app could support:
+
+Voice input
+
+Additional conversion modules
+
+User profiles
+
+Theme customization
+
+8. Conclusion
+
+The TV Calculator & Unit Converter successfully demonstrates a fully functional tvOS prototype that is:
+
+Visually appropriate for large screens
+
+Remotely navigable
+
+Modular
+
+Useful
+
+Simple to understand
