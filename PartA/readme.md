@@ -1,103 +1,135 @@
-Furni47 – AR Furniture Preview App
-ARKit + SwiftUI + Core Data
+🪑 FerniFresh – AR Furniture Preview App
 
-Furni47 is an iOS application that allows users to preview virtual furniture in real-world environments using augmented reality. The app uses ARKit for surface detection and object placement, SwiftUI for UI components and navigation, and Core Data to save user-selected furniture models.
+An Augmented Reality furniture placement experience built with SwiftUI and ARKit.
 
-This project was developed as part of the Mobile Application Design & Development coursework.
+FerniFresh is a simple and intuitive AR application that lets users place 3D furniture models into their real environment using the iPhone’s camera. Built entirely with SwiftUI + ARKit + RealityKit, the app provides a clean UI, fast AR placement, and smooth model interaction.
 
-🚀 Features
-🟣 Augmented Reality Placement
+This project is part of the Mobile Application Development coursework.
 
-Detects horizontal surfaces using ARKit
+🎯 Features
+🟦 Augmented Reality Placement
 
-Allows users to place 3D furniture models (.usdz) in real space
+Detects horizontal surfaces using ARKit.
 
-Supports movement, rotation, and scaling gestures
+Places 3D furniture models (chair, table, lamp) into the real world.
 
-Real-time, stable AR tracking
+Anchors objects accurately based on raycasting.
 
-🟣 3D Model Browser
+Works in real-time on ARKit-supported iPhones.
 
-Built-in selection menu for available furniture
+🟦 Minimal & Clean UI
 
-Models include: Chair, Table, Lamp
+SwiftUI-powered interface.
 
-Smooth transitions and custom UI components
+Bottom bar for furniture selection.
 
-🟣 Favorites System (Core Data)
+"Place" button to drop the selected model into AR.
 
-Save frequently used furniture models
+Modern icons and layout.
 
-View and manage saved items
+🟦 3D Furniture Models
 
-One-tap reloading into AR scene
+The app includes three USDZ models:
 
-🟣 Clean & Minimal UI
+Modern Chair (chair.usdz)
 
-Fully built with SwiftUI
+Dining Table (table.usdz)
 
-Custom buttons, animations, and layout
-
-Works with Dark Mode
-
-Adaptive layout for different screen sizes
+Floor Lamp (lamp.usdz)
 
 📱 App Structure
-
-The app contains three main screens:
-
-Home Screen
-
-App branding and quick navigation
-
-Model previews
-
-Buttons for AR mode and saved items
-
-AR View
-
-AR session with plane detection
-
-Object placement with gestures
-
-Floating action controls (reset, save, change object)
-
-Saved Items Screen
-
-List of user-saved furniture
-
-Re-open models in AR instantly
-
-🏛 Architectural Overview
-
-The app is built using:
-
-SwiftUI → UI, navigation, animations
-
-RealityKit + ARKit → AR rendering and spatial tracking
-
-Core Data → Local storage for favorites
-
-MVVM pattern → Clean separation of View & Logic
-
-Core components include:
-
-ARViewContainer.swift
-
-FurnitureModel.swift
-
-FurnitureViewModel.swift
-
-PersistenceController.swift
-
-FurnitureEntity Core Data class
+FerniFresh/
+│
+├── Models/
+│   ├── chair.usdz
+│   ├── table.usdz
+│   └── lamp.usdz
+│
+├── Views/
+│   ├── ContentView.swift
+│   └── LaunchScreen.storyboard
+│
+├── AR/
+│   └── ARViewContainer.swift
+│
+├── Resources/
+│   └── Assets.xcassets (LaunchLogo, icons, etc.)
+│
+└── FerniFreshApp.swift
 
 🧱 Technologies Used
 Technology	Purpose
-ARKit	Plane detection + object placement
-RealityKit	Rendering 3D models with gestures
-SwiftUI	Entire UI, layout, transitions
-Core Data	Saving favorite objects
-MVVM	App architecture
-USDZ Models	3D furniture
+SwiftUI	UI layout, animation, and screen structure
+ARKit	Surface detection + camera tracking
+RealityKit	Rendering 3D models and placing objects
+USDZ Models	Apple’s native 3D model format
+Storyboard Launch Screen	App launch logo
+🚀 How to Run the App
+Requirements:
 
+iPhone 8 or newer
+
+iOS 15+
+
+Mac with Xcode 15+
+
+ARKit support
+
+Camera permission enabled
+
+Steps:
+
+Clone the repository or download the project.
+
+Open FerniFresh.xcodeproj in Xcode.
+
+Connect an ARKit-capable iPhone to your Mac.
+
+Select your iPhone as the build target.
+
+Run the app using the ▶️ Run button.
+
+Move your phone around until ARKit detects a plane (floor/table).
+
+Select a furniture item and tap Place.
+
+🎨 Launch Screen
+
+This project includes a fully customized launch screen featuring the FurniFresh logo.
+If the launch screen does not update, reinstall the app on your device (iOS caches launch screens).
+
+🧪 Testing
+
+Manual testing includes:
+
+Surface detection on different environments.
+
+Object placement stability.
+
+Camera permission handling.
+
+UI responsiveness and tap gestures.
+
+Performance testing includes:
+
+Load time of USDZ models.
+
+Smoothness of AR interactions.
+
+🧭 Future Improvements
+
+Multi-object placement
+
+Furniture rotation / scaling gestures
+
+Saving placed objects
+
+Room scanning features
+
+More detailed 3D models
+
+👨‍💻 Developer
+
+Name: Kojitha
+Project Title: FerniFresh
+Tech: SwiftUI + ARKit + RealityKit
