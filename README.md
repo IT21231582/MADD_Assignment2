@@ -1,264 +1,187 @@
-TV Calculator & Unit Converter – Documentation
-1. Introduction
+# 📺 TV Calculator & Unit Converter (tvOS App)
+
+A modern, TV-friendly calculator and unit converter built for *Apple tvOS* using *SwiftUI*.  
+Designed for remote-based input, large screens, and smooth navigation using the *tvOS Focus Engine*.
+
+This project was developed as the Part B assignment requirement for SE4041 – Mobile Application Design & Development.
+
+---
+
+## 🎯 Purpose of the App
+This application adapts everyday tools (calculator + unit conversion) into a *living-room friendly experience* on Apple TV.
+
+Instead of small phone interactions, this app delivers:
+- Large, readable display text  
+- Remote-based navigation (arrow keys, D-pad)  
+- Highlighted, focusable buttons  
+- TV-optimized layouts  
+- A pleasant gradient theme designed for distance viewing  
+
+It demonstrates how simple utilities can be redesigned for tvOS user interaction models.
+
+---
+
+## ✨ Features
+
+### 🔢 1. Standard Calculator
+- Fully functional arithmetic calculator  
+- Supports: +, −, ×, ÷, decimals  
+- Large calculator buttons arranged in a 4×4 grid  
+- Focusable buttons with:
+  - Blue highlight
+  - Glow effect  
+  - Scale animation
 
-This document presents the design, functionality, and technical implementation of the TV Calculator & Unit Converter, a prototype tvOS application developed using SwiftUI. The goal of the app is to reimagine simple everyday utilities—such as calculators and unit converters—for a living-room environment where users rely on a remote control instead of touch input.
+### 🔄 2. Unit Converter (New Feature)
+A simple, clean, fully button-based converter with *NO keyboard input required*.
 
-The app was developed as part of the SE4041 – Mobile Application Design and Development assignment, focusing on platform-specific design for tvOS and demonstrating the ability to adapt interaction models to a television interface.
+Includes:
+- *Length Conversion*
+  - Meters ↔ Kilometers  
+- *Weight Conversion*
+  - Kilograms ↔ Grams  
+- *Temperature Conversion*
+  - Celsius ↔ Fahrenheit  
 
-2. Purpose of the Application
+The user flows:
+1. Select Conversion Category  
+2. Choose specific conversion direction  
+3. Use on-screen numeric keypad to enter values  
+4. Press *Convert*  
+5. Output displays instantly in large text  
 
-Traditional calculators and converters are typically built for mobile devices. This project aims to shift those tools into a TV context, where the user interacts using:
+Built to be extremely easy to operate with a remote.
+
+### ✨ 3. Daily Inspiration (Optional Section)
+- Displays a random quote or fun fact  
+- Includes a random image  
+- Appears at the top of the Home screen  
+- Fully focusable section  
+- Adds personality to the app
+
+---
+
+## 🎮 tvOS Navigation Features
 
-Arrow keys
+- Uses the *tvOS Focus Engine* for:
+  - Arrow key movement  
+  - Siri Remote D-pad / clickpad  
+  - Keyboard arrow key input  
+- Highlight animations:
+  - Blue glow  
+  - Scale-up when focused  
+  - Smooth transitions  
+- Simple navigation controlled by NavigationStack
 
-Siri Remote (D-pad or clickpad)
+All buttons follow a *custom FocusableButtonStyle*.
 
-Large on-screen navigation focus
+---
+
+## 🧩 App Screens
+
+### 🏠 Home Screen
+- Gradient blue–white background  
+- Big, focusable buttons:
+  - *Calculator*
+  - *Unit Converter*
+- Optional: Daily Inspiration card
+
+### 🔢 Calculator Screen
+- Large display area  
+- Big button grid  
+- Smooth focus transitions  
+- tvOS-optimized layout  
+
+### 🔄 Unit Converter Screen
+- Category picker  
+- Conversion type picker  
+- Numeric keypad  
+- Convert button  
+- Instant results  
+
+---
 
-Spacious UI designed for distance viewing
+## 🛠️ Technologies Used
 
-The app provides:
+- *SwiftUI (tvOS)*  
+- *NavigationStack*  
+- *Focus Engine*  
+- *Custom ButtonStyle*
+- *State Management with @State*  
+- *Reusable Components (Keypad, Converter Modes)*  
 
-A standard calculator
+---
 
-A unit converter with common conversion categories
+## 📐 Architecture
 
-A simple, clear, and accessible interface suitable for TV usage.
+A lightweight, clean SwiftUI architecture:
+- TVCalculatorApp.swift → Launches NavigationStack  
+- HomeView.swift → Main screen  
+- CalculatorView.swift → Standard calculator  
+- UnitConverterView.swift → Full unit conversion tool  
+- FocusableButtonStyle.swift → Reusable button highlight style  
 
-3. Key Features
-3.1 Standard Calculator
+Each screen is isolated, making future expansion easy.
 
-The calculator offers basic arithmetic operations:
+---
 
-Addition
+## 🧪 Testing
 
-Subtraction
+Tested on:
+- *Apple TV 1080p Simulator*
+- *Apple TV 4K Simulator*
 
-Multiplication
+Scenarios tested:
+- Button focus navigation  
+- Calculator operations  
+- All unit conversion flows  
+- Keypad numeric input  
+- Convert button execution  
+- Input validation (empty fields, zero division)  
+- Navigation back & forth between screens  
 
-Division
+All core features successfully tested.
 
-Decimal support
+---
 
-Buttons are arranged in a large 4×4 grid with:
+## ▶️ How to Run
 
-Clear typography
+1. Install *Xcode*  
+2. Open the project folder  
+3. Set target to:  
+   - Apple TV 1080p Simulator  
+   - OR Apple TV 4K Simulator  
+4. Run the project (⌘ + R)  
+5. Navigate using:
+   - Keyboard arrow keys  
+   - Return/Enter  
+   - Or Siri Remote (if connected)
 
-Custom blue highlight
+---
 
-Animated focus scaling
+## 🚀 Future Enhancements
 
-Smooth tvOS navigation
+- Voice input using Siri Remote  
+- More unit categories (currency, volume, time)  
+- Theme customization  
+- Calculation history  
+- Multi-user profiles per Apple TV user  
 
-3.2 Unit Converter
+---
 
-A fully button-driven unit converter, designed to require no keyboard input, offering:
+## 📘 Academic Notes (For Assignment Submission)
 
-Conversion Categories
+This project demonstrates:
+- Platform-specific design for *tvOS*  
+- Focus-based interaction rather than touch input  
+- Clean SwiftUI architecture  
+- Interactive animations + custom components  
+- A meaningful extension of the calculator concept (Unit Conversion)  
+- Professional UI with gradient, spacing, and typography  
+- Proper navigation and user flow design  
+- Testing and functional prototype completeness  
 
-Length
+---
 
-Meters ↔ Kilometers
-
-Weight
-
-Kilograms ↔ Grams
-
-Temperature
-
-Celsius ↔ Fahrenheit
-
-Conversion Flow
-
-User selects a category
-
-Selects a conversion type
-
-Enters a value using an on-screen numeric keypad
-
-Presses Convert
-
-The result appears instantly in large, readable text
-
-This section demonstrates clean state handling and modular UI design for tvOS.
-
-3.3 Daily Inspiration (Optional)
-
-A dynamic section on the Home screen displaying:
-
-A random motivational quote or fun fact
-
-A random background image
-
-Includes smooth focus animation and optional interaction.
-
-4. User Experience & Interaction Design
-4.1 tvOS Navigation
-
-The app relies heavily on the tvOS Focus Engine, enabling navigation using:
-
-Siri Remote
-
-Arrow keys
-
-Standard keyboard
-
-To support this:
-
-All interactive elements implement .focusable(true)
-
-A custom FocusableButtonStyle provides:
-
-Blue highlight
-
-Glow
-
-Scale effect
-
-Smooth transition animations
-
-The layout is spaced generously to prevent focus ambiguity.
-
-4.2 Visual Design
-
-The visual language emphasizes:
-
-A blue-white gradient background
-
-Large spacing between UI components
-
-Crisp, high-contrast text
-
-Minimum visual clutter
-
-Consistent rounded corners and transparencies
-
-This aligns with best practices for 10-foot UI experiences.
-
-5. Technical Implementation
-5.1 Technologies Used
-
-SwiftUI for tvOS
-
-NavigationStack for screen transitions
-
-State management using @State
-
-Custom ButtonStyle for focus animations
-
-Reusable numeric keypad component
-
-5.2 Architecture
-
-A lightweight modular architecture was used:
-
-TVCalculatorApp.swift
-Launches the app and sets the NavigationStack.
-
-HomeView.swift
-Displays the main navigation to the Calculator and Unit Converter.
-
-CalculatorView.swift
-Contains grid layout, arithmetic logic, and display output.
-
-UnitConverterView.swift
-Provides:
-
-Category picker
-
-Conversion selector
-
-Keypad input
-
-Conversion logic
-
-FocusableButtonStyle.swift
-Custom style for all tvOS buttons (highlight/glow/scale).
-
-This modular structure supports easy expansion and debugging.
-
-6. Testing
-6.1 Testing Environment
-
-Testing was performed on:
-
-Apple TV 1080p Simulator
-
-Apple TV 4K Simulator
-
-6.2 Manual Test Scenarios
-Calculator
-
-Basic operations
-
-Decimal input
-
-Large numbers
-
-Rapid button navigation
-
-Correct parsing and calculation using NSExpression
-
-Unit Converter
-
-All conversions tested with various values
-
-Conversion formulas validated:
-
-Meters ↔ Kilometers
-
-Grams ↔ Kilograms
-
-Celsius ↔ Fahrenheit
-
-Keypad input behavior tested
-
-Output accuracy confirmed
-
-Navigation
-
-Arrow key/D-pad movement
-
-Focus highlighting
-
-Returning between screens
-
-No loss of focus when navigating between keypad buttons
-
-7. Reflection
-
-This project reinforced understanding of tvOS-specific interaction design, particularly:
-
-How the Focus Engine changes UI layouts
-
-Importance of large typography and spacing
-
-Designing input flows without a system keyboard
-
-Using custom button styles to improve user experience
-
-The unit converter in particular showcased how a simple tool can be redesigned to work without text fields—purely through remote-friendly UI components.
-
-If extended, this app could support:
-
-Voice input
-
-Additional conversion modules
-
-User profiles
-
-Theme customization
-
-8. Conclusion
-
-The TV Calculator & Unit Converter successfully demonstrates a fully functional tvOS prototype that is:
-
-Visually appropriate for large screens
-
-Remotely navigable
-
-Modular
-
-Useful
-
-Simple to understand
+## 📄 License
+This project is developed for educational and academic submission purposes.
